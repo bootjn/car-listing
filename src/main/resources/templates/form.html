@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<div class="container">
+
+<nav th:replace="base :: main-navbar"></nav>
+
+
+            <h3>Add a Car</h3>
+            <form method="POST" action="/add" th:object="${car}" enctype="multipart/form-data">
+
+                    <input type="hidden" th:field="*{id}" class="form-control" />
+
+
+                    <p><label for="brandInput">Brand: </label>
+                    <input type="text" th:field="*{brand}" class="form-control" id="brandInput" placeholder="Enter brand" /><br>
+
+
+                    <label for="modelnameInput">Modelname: </label>
+                    <input type="text" th:field="*{modelname}" class="form-control" id="modelnameInput" placeholder="Enter modelname" /><br>
+
+                    <label for="yearInput">Year: </label>
+                    <input type="text" th:field="*{year}" class="form-control" id="yearInput" placeholder="Enter year" /><br>
+
+
+                    <label for="msrpInput">MSRP: </label>
+                    <input type="text" th:field="*{msrp}" class="form-control" id="msrpInput" placeholder="Enter msrp" /><br>
+
+                    <label for="fileInput">Image</label>
+                    <input class="form-control" id="fileInput" type="file" name="file" /><br>
+
+
+
+
+
+                <button type="submit" class="">Submit</button></p>
+
+            </form>
+
+
+
+<footer th:replace="base :: footer"></footer>
+<div th:replace="base :: scripts"></div>
+
+</div>
+
+
+</body>
+</html>

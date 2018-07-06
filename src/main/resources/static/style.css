@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+	background-image: url("icon-mamppro.png");
+	background-repeat: repeat-x;
+	background-position: right top;
+	background-attachment: ;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: Courier New;
+    font-size: ;
+	font-color: blue;
+	text-shadow:
+	text-color: blue;
+	color: blue;
+}

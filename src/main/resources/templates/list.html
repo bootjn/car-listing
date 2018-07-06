@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+
+</head>
+<body>
+
+
+
+
+
+<nav th:replace="base :: main-navbar"></nav>
+
+<img src="car-icons.png" height="100">
+
+<p>Categories: <br></p>
+<p>Cars available: <br></p>
+
+        <div th:each="oneCar : ${cars}" >
+            <div th:if="${oneCar.pictureUrl} != null">
+            <img width="200" th:src="(${oneCar.pictureUrl})" />
+            <div >
+                <p><span th:text="${oneCar.brand}"></span>
+                <span th:text="${oneCar.modelname}"></span><br>
+
+                <span  th:text="${oneCar.msrp}"> </span>msg <br ></p>
+
+
+
+
+
+
+
+
+                <div>
+                    <span><a th:href="@{/detail/{id}(id=${oneCar.id})}">View More</a></span>
+                </div>
+                <br/>
+                <br/>
+
+                <br/>
+                 <br/>
+            </div>
+        </div>
+    </div>
+
+
+        <div th:each="oneCate : ${cates}" >
+            <span th:text="${oneCate.catetype}"></span><br>
+            </div>
+
+</div>
+
+<footer th:replace="base :: footer"></footer>
+<div th:replace="base :: scripts"></div>
+
+
+
+
+
+</body>
+</html>
